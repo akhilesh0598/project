@@ -1,0 +1,33 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007f0f5b440ba3, pid=29759, tid=29775
+#
+# JRE version: OpenJDK Runtime Environment (14.0.2+12) (build 14.0.2+12-46)
+# Java VM: OpenJDK 64-Bit Server VM (14.0.2+12-46, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x4ba3]  ImageFileReader::verify_location(ImageLocation&, char const*) const+0xa3
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/akhilesh/eclipse-workspace/SnakeGame/core.29759)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages Snake
+
+Host: AMD A6-7310 APU with AMD Radeon R4 Graphics, 4 cores, 3G, Ubuntu 20.04.1 LTS
+Time: Thu Sep 24 19:10:43 2020 IST elapsed time: 29799 seconds (0d 8h 16m 39s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007f0f5413b000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=29775, stack(0x00007f0f40a5d000,0x00007f0f40b5e000)]
+
+Stack: [0x00007f0f40a5d000,0x00007f0f40b5e000],  sp=0x00007f0f40b5b1d0,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x4ba3]  ImageFileReader::verify_location(ImageLocation&, char const*) const+0xa3
+C  [libjimage.so+0x4dcf]  ImageFileReader::find_location_index(char const*, unsigned long long*) const+0x8f
+C  [libjimage.so+0x5271]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x50f7bb]

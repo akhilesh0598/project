@@ -1,0 +1,91 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x00007fa9d8bca2f5, pid=29714, tid=29729
+#
+# JRE version: OpenJDK Runtime Environment (14.0.2+12) (build 14.0.2+12-46)
+# Java VM: OpenJDK 64-Bit Server VM (14.0.2+12-46, mixed mode, tiered, compressed oops, g1 gc, linux-amd64)
+# Problematic frame:
+# C  [libjimage.so+0x42f5]  ImageLocation::set_data(unsigned char*)+0x5
+#
+# Core dump will be written. Default location: Core dumps may be processed with "/usr/share/apport/apport %p %s %c %d %P %E" (or dumping to /home/akhilesh/eclipse-workspace/SnakeGame/core.29714)
+#
+# If you would like to submit a bug report, please visit:
+#   https://bugreport.java.com/bugreport/crash.jsp
+#
+
+---------------  S U M M A R Y ------------
+
+Command Line: -Dfile.encoding=UTF-8 -XX:+ShowCodeDetailsInExceptionMessages Snake
+
+Host: AMD A6-7310 APU with AMD Radeon R4 Graphics, 4 cores, 3G, Ubuntu 20.04.1 LTS
+Time: Thu Sep 24 19:10:43 2020 IST elapsed time: 29823 seconds (0d 8h 17m 3s)
+
+---------------  T H R E A D  ---------------
+
+Current thread (0x00007fa9d4143000):  JavaThread "Signal Dispatcher" daemon [_thread_in_vm, id=29729, stack(0x00007fa9bc29e000,0x00007fa9bc39f000)]
+
+Stack: [0x00007fa9bc29e000,0x00007fa9bc39f000],  sp=0x00007fa9bc39c1f8,  free space=1016k
+Native frames: (J=compiled Java code, A=aot compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libjimage.so+0x42f5]  ImageLocation::set_data(unsigned char*)+0x5
+C  [libjimage.so+0x5271]  JIMAGE_FindResource+0xf1
+V  [libjvm.so+0x50f473]  ClassPathImageEntry::open_stream_for_loader(char const*, ClassLoaderData*, Thread*)+0x53
+V  [libjvm.so+0x513e5d]  ClassLoader::load_class(Symbol*, bool, Thread*)+0x13d
+V  [libjvm.so+0xc7c773]  SystemDictionary::load_instance_class(Symbol*, Handle, Thread*)+0x423
+V  [libjvm.so+0xc7b45a]  SystemDictionary::resolve_instance_class_or_null(Symbol*, Handle, Handle, Thread*)+0x9ba
+V  [libjvm.so+0xc7d650]  SystemDictionary::resolve_or_fail(Symbol*, Handle, Handle, bool, Thread*)+0x50
+V  [libjvm.so+0x578d10]  ConstantPool::klass_at_impl(constantPoolHandle const&, int, bool, Thread*)+0xe0
+V  [libjvm.so+0x7878ca]  InterpreterRuntime::_new(JavaThread*, ConstantPool*, int)+0x6a
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@14.0.2
+v  ~StubRoutines::call_stub
+V  [libjvm.so+0x78e42b]  JavaCalls::call_helper(JavaValue*, methodHandle const&, JavaCallArguments*, Thread*)+0x2fb
+V  [libjvm.so+0x78ea89]  JavaCalls::call_static(JavaValue*, Klass*, Symbol*, Symbol*, JavaCallArguments*, Thread*)+0x129
+V  [libjvm.so+0xb13861]  signal_thread_entry(JavaThread*, Thread*)+0x311
+V  [libjvm.so+0xcc2592]  JavaThread::thread_main_inner()+0xe2
+V  [libjvm.so+0xcc6dad]  Thread::call_run()+0x10d
+V  [libjvm.so+0xb24677]  thread_native_entry(Thread*)+0xe7
+
+Java frames: (J=compiled Java code, j=interpreted, Vv=VM code)
+j  jdk.internal.misc.Signal.dispatch(I)V+25 java.base@14.0.2
+v  ~StubRoutines::call_stub
+
+siginfo: si_signo: 11 (SIGSEGV), si_code: 1 (SEGV_MAPERR), si_addr: 0x00007fa9d0404732
+
+Register to memory mapping:
+
+RAX=0x0000000000064c4e is an unknown value
+RBX=0x00007fa9d4035720 points into unknown readable memory: 00 00 00 00 00 00 00 00
+RCX=0x00007fa9d035e01c is an unknown value
+RDX=0x00007fa9d037ed80 is an unknown value
+RSP=0x00007fa9bc39c1f8 is pointing into the stack for thread: 0x00007fa9d4143000
+RBP=0x00007fa9bc39c260 is pointing into the stack for thread: 0x00007fa9d4143000
+RSI=0x00007fa9d0404732 is an unknown value
+RDI=0x00007fa9bc39c200 is pointing into the stack for thread: 0x00007fa9d4143000
+R8 =0x0 is NULL
+R9 =0x0000000076100fa4 is an unknown value
+R10=0x00007fa9bc39c2a3 is pointing into the stack for thread: 0x00007fa9d4143000
+R11=0x00007fa9bc39c200 is pointing into the stack for thread: 0x00007fa9d4143000
+R12=0x0000000000064c4e is an unknown value
+R13=0x00007fa9bc39c280 is pointing into the stack for thread: 0x00007fa9d4143000
+R14=0x00007fa9bc39d328 is pointing into the stack for thread: 0x00007fa9d4143000
+R15=0x00007fa9d4143810 points into unknown readable memory: 6a 64 6b 2f 69 6e 74 65
+
+
+Registers:
+RAX=0x0000000000064c4e, RBX=0x00007fa9d4035720, RCX=0x00007fa9d035e01c, RDX=0x00007fa9d037ed80
+RSP=0x00007fa9bc39c1f8, RBP=0x00007fa9bc39c260, RSI=0x00007fa9d0404732, RDI=0x00007fa9bc39c200
+R8 =0x0000000000000000, R9 =0x0000000076100fa4, R10=0x00007fa9bc39c2a3, R11=0x00007fa9bc39c200
+R12=0x0000000000064c4e, R13=0x00007fa9bc39c280, R14=0x00007fa9bc39d328, R15=0x00007fa9d4143810
+RIP=0x00007fa9d8bca2f5, EFLAGS=0x0000000000010202, CSGSFS=0x002b000000000033, ERR=0x0000000000000004
+  TRAPNO=0x000000000000000e
+
+Top of Stack: (sp=0x00007fa9bc39c1f8)
+0x00007fa9bc39c1f8:   00007fa9d8bcadc1 0000000000000000
+0x00007fa9bc39c208:   0000000000000000 0000000000000000
+0x00007fa9bc39c218:   0000000000000000 0000000000000000
+0x00007fa9bc39c228:   0000000000000000 0000000000000000 
+
+Instructions: (pc=0x00007fa9d8bca2f5)
+0x00007fa9d8bca1f5:   00 01 66 0f 1f 84 00 00 00 00 00 44 69 c8 93 01
+0x00007fa9d8bca205:   00 01 49 83 c2 01 41 0f b6 c0 45 0f b6 42 ff 44
+0x00007fa9d8bca215:   31 c8 45 84 c0 75 e4 25 ff ff ff 7f 41 89 cd 48
